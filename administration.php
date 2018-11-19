@@ -57,15 +57,15 @@
 		<form  name="ajax2" method="POST" action="">
 		  <div class="form-group">
 		    <label for="name"><b>Event's name :</b></label>
-		    <input  name="nom" class="form-control" type="text" id="name" placeholder="name" required>
+		    <input  name="nom" class="form-control" type="text" id="name" placeholder="name">
 		  </div>
 		  <div class="form-group">
 		    <label for="adress"><b>Event's adress :</b></label>
-		    <input  name="adress" class="form-control" type="text" id="adress" placeholder="name" >
+		    <input  name="adress" class="form-control" type="text" id="adress" placeholder="adress" >
 		  </div>
 		  <div class="form-group">
 		    <label for="date"><b>Event's date :</b></label>
-		    <input  name="adress" class="form-control" type="text" id="date" placeholder="name" >
+		    <input  name="date" class="form-control" type="text" id="date" placeholder="date" >
 		  </div>
 		  	  <INPUT type="button" class="btn btn-primary " value="Tester l'URL"  ONCLICK="submitForm2()">
 		</form>
