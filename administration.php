@@ -2,10 +2,43 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="ajax.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(function(){
+      
+      $('#get_evts').click(function(e){
+        e.preventDefault();
+         // alert("hello");
+        $.ajax({
+          url: 'ajax.php',
+          type: 'get',
+          success: function(res){
+              $('#evts').html(res);
+          }
+      })
+      });
+      
+     return false;
+  });
+  $(function(){
+      $('#add_evt').click(function(e){
+        e.preventDefault();
+        // alert("hello");
+        $.ajax({
+          url: 'ajax_add_event.php',
+          type: 'post',
+          data: $('#my_form').serialize(),
+          success: function(res,statut){
+              $('#storage2').html(res);
+          },
+
+      });
+      });
+      
+     return false;
+  });
+  </script>
 
 	<title>admin</title>
 </head>
@@ -54,7 +87,7 @@
 	<div class="col-md-4">
 
 		
-		<form  name="ajax2" method="POST" action="">
+		<form id="my_form" name="ajax2" method="POST" action="">
 		  <div class="form-group">
 		    <label for="name"><b>Event's name :</b></label>
 		    <input  name="nom" class="form-control" type="text" id="name" placeholder="name">
@@ -67,21 +100,23 @@
 		    <label for="date"><b>Event's date :</b></label>
 		    <input  name="date" class="form-control" type="text" id="date" placeholder="date" >
 		  </div>
-		  	  <INPUT type="button" class="btn btn-primary " value="Tester l'URL"  ONCLICK="submitForm2()">
+		  	  <INPUT id="add_evt" type="button" class="btn btn-primary " value="ajouter" >
 		</form>
 		<hr />
-		<p> <span id="storage2"> L'affichage du script PHP sera inséré ici </span></p>
+		<p> <span id="storage2"> résultat d'ajout ici </span></p>
 		<hr />
 	</div>
 
 		<div class="col-md-8">
-			<FORM name="ajax" method="POST" action="">
+			<FORM name="ajax">
 			<p>
-			<INPUT type="button" class="btn btn-primary btn-lg" value="Envoyer"  ONCLICK="submitForm(document.getElementById('storage'))">
+			<button id="get_evts" type="button" class="btn btn-primary btn-lg">aller </button>
+      <span id="msg"></span>
 			</p>
 		</FORM>
 		<hr />
-		<p> <span id="storage"> L'affichage du script PHP sera inséré ici </span></p>
+		<p> <span id="evts"> L'affichage des evenment existants sera ici
+   </span></p>
 		<hr />
 		</div>	
 
@@ -89,5 +124,8 @@
 
 
 </div>
+
+
+
 </body>
 </html>
