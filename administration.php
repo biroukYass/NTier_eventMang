@@ -98,7 +98,7 @@
 		  </div>
 		  <div class="form-group">
 		    <label for="date"><b>Event's date :</b></label>
-		    <input  name="date" class="form-control" type="text" id="date" placeholder="date" >
+		    <input  name="date" class="form-control" type="date" id="date" placeholder="date" >
 		  </div>
 		  	  <INPUT id="add_evt" type="button" class="btn btn-primary " value="ajouter" >
 		</form>

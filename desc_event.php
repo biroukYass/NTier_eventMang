@@ -108,7 +108,8 @@
   </div>
   <br>
   <div class="border col-md-6">
-    <h3>geolocalisation</h3>
+    <!-- <h3>geolocalisation</h3> -->
+        <div id='directionsInputContainer'></div>
     <div id='printoutPanel' style="display: none;"></div>
     <div id='myMap' style="width: 100%; height: 400px"></div>
   </div>
@@ -145,6 +146,7 @@
                 // var adr=document.getElementById('adr').value();
                 var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
                 search(map,document.getElementById('adr').textContent);
+
                 function search(map, query) {
                     //Create an instance of the search manager and perform the search.
                     Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
@@ -182,6 +184,17 @@
                                 }
                                 map.setView({ bounds: bounds });
                             }
+                            Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+                    var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+                    directionsManager.setRenderOptions({ itineraryContainer: document.getElementById('printoutPanel') });
+
+                    
+                //     var waypoint1 = new Microsoft.Maps.Directions.Waypoint({ address: "my loc", location:new Microsoft.Maps.Location(0,0) });
+                //        directionsManager.addWaypoint(waypoint1);
+                            var waypoint2 = new Microsoft.Maps.Directions.Waypoint({ address: r.results[0].name, location: r.results[0].location });
+                              directionsManager.addWaypoint(waypoint2);
+                    directionsManager.showInputPanel('directionsInputContainer');
+                 });
                         },
                         errorCallback: function (e) {
                             //If there is an error, alert the user about it.
