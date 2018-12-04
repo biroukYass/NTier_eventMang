@@ -3,18 +3,7 @@
 
 function add_event($nom,$date,$adress)
 {
-  $servername = "localhost";
-  $username = "phpmyadmin";
-  $password = "root";
-  $dbname = "adv_db";
-
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-      echo "error bdd connection";
-  } 
+  require "bd_conx.php";
 
   if (empty($nom) or empty($date) or empty($adress) ) {
     echo "<div class='alert alert-danger' role='alert'>fill all fields </div>";

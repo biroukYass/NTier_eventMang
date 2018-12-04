@@ -1,17 +1,6 @@
 <?php
 
-  $servername = "localhost";
-    $username = "phpmyadmin";
-    $password = "root";
-    $dbname = "adv_db";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        echo "error bdd connection";
-    } 
+  require "bd_conx.php";
 
     $mail = $_POST["mail"];
     $nom = $_POST["nom"];
