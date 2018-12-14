@@ -12,9 +12,9 @@ function add_event($nom,$date,$adress)
     $query = "INSERT INTO event(nom , date , adress) VALUES('$nom', '$date', '$adress')";
     $result = $conn->query($query);
     if ($result) {
-      echo "<div class='alert alert-success' role='alert'>your event is inserted </div>";
+      echo "<div  class=' alert alert-success' role='alert'>your event is inserted </div>";
     }else{
-      echo "<div class='alert alert-danger' role='alert'>error </div>";
+      echo "<div class=' alert alert-danger' role='alert'>error </div>";
 
     }
   }

@@ -130,6 +130,11 @@
 
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Ambnp48mbBd6ZVjctl4lB07mnsho9vt8flxJKXwTAeRdjk2T4KeXrjsqyZmve_pG &callback=loadMapScenario' async defer></script>
 
+<br><br>
+<footer class="footer">
+  <div class="text-center">-----------------------------------------------</div>
+  <div class="footer-copyright text-center">2018 copyright  <a href="">www.myste.com</a></div>
+</footer>
 </body>
 </html>
 

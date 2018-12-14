@@ -38,8 +38,8 @@ $result = $conn->query($query);
           ?>
 </tbody>
 </table>
-<script src="update_event.js"></script>
-<script src="delete_event.js"></script>
+<script src="scripts/update_event.js"></script>
+<script src="scripts/delete_event.js"></script>
 <script>
   $(document).ready(function(){
     $("#myInput").on("keyup", function() {

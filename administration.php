@@ -77,13 +77,16 @@
 			</p>
 	  </FORM>
 		<hr />
-		<p> <span id="evts"> L'affichage des evenment existants sera ici</span></p>
+		<p> <div id="evts"> <?php require "ajax.php"; ?> </div></p>
 		<hr />
 	</div>	
 
 </div>
 
 
-
+<footer class="footer">
+  <div class="text-center">-----------------------------------------------</div>
+  <div class="footer-copyright text-center">2018 copyright  <a href="">www.myste.com</a></div>
+</footer>
 </body>
 </html>
